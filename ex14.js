@@ -18,3 +18,24 @@
 // Run: node ex14.js
 
 // write your code here
+
+let delay = Math.floor(Math.random() * (1500 - 500 + 1)) + 500;
+
+console.log(`3`)
+
+setTimeout(() => {
+    delay = Math.floor(Math.random() * (1500 - 500 + 1)) + 500;
+    console.log(`2`)
+    setTimeout(() => {
+        delay = Math.floor(Math.random() * (1500 - 500 + 1)) + 500;
+        console.log(`1`)
+        setTimeout(() => {
+            delay = Math.floor(Math.random() * (1500 - 500 + 1)) + 500;
+            console.log(`0`)
+            setTimeout(() => {
+                delay = Math.floor(Math.random() * (1500 - 500 + 1)) + 500;
+                console.log(`Done!`)
+            })
+        }, delay)
+    }, delay)
+}, delay)
