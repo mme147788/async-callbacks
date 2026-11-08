@@ -17,3 +17,42 @@ const path = require("path");
 const directoryPath = path.join(__dirname, "data-folder");
 
 // write your code here
+
+fs.readdir(directoryPath, (err, entries) => {
+
+    if (err) {
+        console.log("Failed to read directory")
+        return
+    }
+
+    let total = 0
+    let completed = 0
+
+    if (entries.length === 0) {
+        console.log(`Total size: ${total} bytes`)
+        return
+    }
+
+    entries.forEach((entry) => {
+
+        const filePath = path.join(directoryPath, entry);
+
+        fs.lstat(filePath, (err, stats) => {
+
+            if (err) {
+                console.log("Failed to get file information");
+            } else if (stats.isFile()) {
+                total += stats.size
+            }
+
+            completed++
+
+            if (completed === entries.length) {
+                console.log(`Total size: ${total} bytes`)
+            }
+
+        })
+
+    })
+
+})
