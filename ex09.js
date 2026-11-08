@@ -14,3 +14,9 @@
 const os = require("os");
 
 // write your code here
+
+const arr = os.cpus()
+
+for(let i =0; i<arr.length; i++){
+    console.log(`CPU ${i}: ${arr[i].model}`)
+}
