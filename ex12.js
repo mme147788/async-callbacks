@@ -17,3 +17,18 @@ const path = require("path");
 const filePath = path.join(__dirname, "notes.txt");
 
 // write your code here
+ fs.access(filePath, fs.constants.F_OK, (err)=>{
+    if(err){
+        console.log("File not found.")
+        return
+    }
+
+    let isTxt
+    let toPrint 
+    path.extname(filePath)===".txt"?isTxt=true : isTxt=false
+     isTxt? toPrint="is": toPrint="is not"
+
+    console.log(`notes.txt ${toPrint} a .txt file.`)
+
+    
+ })
