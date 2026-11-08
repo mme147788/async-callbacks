@@ -14,3 +14,20 @@
 // Run: node ex03.js
 
 // write your code here
+function printDown(num) {
+
+    if (num < 0) {
+        console.log("Time's up!")
+        return
+    }
+
+    setTimeout(() => {
+        console.log(num.toString())
+        printDown(num - 1)
+    }, 1000)
+
+    
+}
+
+
+printDown(5)
