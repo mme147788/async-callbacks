@@ -12,3 +12,8 @@
 const os = require("os");
 
 // write your code here
+function runningLong(){
+    console.log(`System uptime: ${os.uptime()} seconds`)
+}
+
+runningLong()
